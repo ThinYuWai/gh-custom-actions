@@ -10,17 +10,22 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Load & Cache Dependencies
+        id: cache-deps
         uses: ./.github/actions/cached-deps
         with:
           catching: 'false'
       - name: Lint code
-        run: npm run lint
+        run: |
+          npm run lint
+      - name: Output Information
+        run: echo "Cache Used ? ${{ steps.cache-deps.outputs.used-cache }}"
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
       - name: Load & Cache Dependencies
+        id: cache-deps
         uses: ./.github/actions/cached-deps
       - name: Test code
         id: run-tests
@@ -31,6 +36,8 @@ jobs:
         with:
           name: test-report
           path: test.json
+      - name: Output Information
+        run: echo "Cache Used ? ${{ steps.cache-deps.outputs.used-cache }}"
   build:
     needs: test
     runs-on: ubuntu-latest
