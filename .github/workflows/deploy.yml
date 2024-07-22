@@ -74,10 +74,10 @@ jobs:
         with:
           bucket: gha-thin-custom-action-hosting
           dist-foler: ./dist
-  information:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Javascript Custom Actions
-        uses: ./.github/actions/deploy-s3-javascript
+  # information:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Get code
+  #       uses: actions/checkout@v3
+  #     - name: Javascript Custom Actions
+  #       uses: ./.github/actions/deploy-s3-javascript
