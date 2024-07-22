@@ -15,5 +15,5 @@ outputs:
   website-url:
     description: 'The website url of the s3 '
 runs:
-  using: 'docker '
+  using: 'docker'
   image: 'Dockerfile'
