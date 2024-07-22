@@ -20,7 +20,7 @@ jobs:
       - name: Output Information
         run: echo "Cache Used ? ${{ steps.cache-deps.outputs.used-cache }}"
   test:
-    needs: lint
+    # needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -75,7 +75,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         with:
           bucket: gha-thin-custom-action-hosting
-          dist-foler: ./dist
+          dist-folder: ./dist
       - name: Output Information Of S3 URL
         run: |
           echo "Live URL: ${{ steps.deploy.outputs.website-url }}"
