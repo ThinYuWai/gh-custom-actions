@@ -20,6 +20,7 @@ jobs:
       - name: Output Information
         run: echo "Cache Used ? ${{ steps.cache-deps.outputs.used-cache }}"
   test:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Get code
