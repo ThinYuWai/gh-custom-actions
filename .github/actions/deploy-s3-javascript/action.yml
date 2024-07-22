@@ -5,12 +5,15 @@ inputs:
     description: 'The S3 Bucket name.'
     required: true
   bucket-region:
-    description: 'The region of the S3 bucket. '
+    description: 'The region of the S3 bucket. 's
     required: false
     default: 'ap-northeast-1'
   dist-folder:
     description: 'The folder continaing the deployable files'
     required: true
+outputs: 
+  website-url:
+    description: 'The website url of the s3 '
 runs:
   using: 'node16'
   main: 'index.js'
