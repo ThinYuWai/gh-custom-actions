@@ -70,11 +70,11 @@ jobs:
           path: ./dist
       - name: Output contents
         run: ls
-      # - name: Get AWS Permissons
-      #   uses: aws-actions/configure-aws-credentials
-      #   with:
-      #     role-to-assume: arn:aws:iam::590183904639:role/GitHubDemo1
-      #     aws-region: ap-northeast-1
+      - name: Get AWS Permissons
+        uses: aws-actions/configure-aws-credentials
+        with:
+          role-to-assume: arn:aws:iam::590183904639:role/GitHubDemo1
+          # aws-region: ap-northeast-1
       # - name: Configure AWS CLI
       #   run: |
       #     sudo apt-get update
